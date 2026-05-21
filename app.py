@@ -34,7 +34,7 @@ def index():
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO visits DEFAULT VALUES')
+        cursor.execute('INSERT INTO visits (id) VALUES (NULL)')
         conn.commit()
         cursor.execute('SELECT COUNT(*) FROM visits')
         count = cursor.fetchone()[0]
