@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+  name: flask-app
+  labels:
+    app: flask-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-app
+  template:
+    metadata:
+      labels:
+        app: flask-app
+    spec:
+      containers:
+      - name: flask-app
+        image: maniamk/flask-app:with-db
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DB_HOST
+          value: "mysql-service"
+        - name: DB_USER
+          value: "root"
+        - name: DB_PASSWORD
+          value: "root123"
+        - name: DB_NAME
+          value: "devops_db"

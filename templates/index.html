@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Demo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { font-size: 2.5em; }
+        .visits { font-size: 3em; font-weight: bold; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 CI/CD Pipeline Demo</h1>
+        <p>Successfully Deployed via Jenkins + Kubernetes + Prometheus</p>
+        <div class="visits">Total Visits: {{ visits }}</div>
+        <hr>
+        <p>🟢 Application is running on Kubernetes cluster</p>
+        <p>📊 Metrics being collected by Prometheus</p>
+        <p>📈 Visualized in Grafana Dashboard</p>
+    </div>
+</body>
+</html>
